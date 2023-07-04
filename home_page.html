@@ -1,0 +1,45 @@
+{% extends 'home.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+<!-- <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3">
+			<div id="sidebar">		
+				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wikipedia-logo-v2-en.svg/1200px-Wikipedia-logo-v2-en.svg.png" alt="logo" style="width: 100%; padding-bottom: 20px;">
+				<form action="/home" method="post">
+					<br>
+					<div class="input-group mb-3">
+						<input type="search" class="form-control" id="query" name="query" placeholder="search...">
+					</div>
+				</form>	
+				<ul>
+					<li><a href="/home">Home</a></li>
+                    <li><a href="/create">Create</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-9"> -->
+			{% if articlesList|length > 0 %}
+				<h1> All Articles </h1>
+				{% else %}
+					<div>
+						<h1>
+							No Articles Found!
+						</h1>
+					</div>
+			{% endif %}
+			<ul>
+				{% for article in articlesList %}
+					<li>
+						<a href = "/contentDisplay/{{article.title}}"> {{article.title}}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

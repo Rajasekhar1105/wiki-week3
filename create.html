@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+{% block body %}
+
+<div class="row">
+    <form action="/save_article_form_data" method="post">
+        <hr>
+        <div  class="c4">
+            <label for = "title">Title:</label><br>
+            <input type="text" id="title" name="title" placeholder="Enter Title"><br>
+        </div>
+        <br>
+        <div class="c5">
+            <label for ="content">Content:</label><br>
+            <textarea id="content" name="content" rows="15" cols="150" placeholder="Enter Content"></textarea><br>
+        </div>
+        <div class="c6">
+            <input type="submit">
+        </div>
+    </form>
+</div>
+{% endblock %}
